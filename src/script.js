@@ -48,6 +48,12 @@ function showTemp(response) {
   thermalSensation.innerHTML = Math.round(response.data.main.feels_like);
   console.log(response.data);
   currentCity.innerHTML = response.data.name;
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  console.log(response.data.weather[0].icon);
 }
 
 searchForm.addEventListener("submit", find);
@@ -55,8 +61,6 @@ searchForm.addEventListener("submit", find);
 let locationButton = document.querySelector("#location");
 function showTempHere() {
   function getLocation(position) {
-    console.log(position.coords.latitude);
-    console.log(position.coords.longitude);
     let apiUrlcoords = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=427d00adec8a31c1032d4fd37c4a7f55&units=metric`;
     axios.get(apiUrlcoords).then(showTempLoc);
     currentCity.innerHTML = `${position.coords.latitude}`;
@@ -71,6 +75,10 @@ function showTempHere() {
     minTemp.innerHTML = Math.round(response.data.main.temp_min);
     hum.innerHTML = Math.round(response.data.main.humidity);
     thermalSensation.innerHTML = Math.round(response.data.main.feels_like);
+    icon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
   }
 }
 

@@ -89,8 +89,10 @@ footer {
   line-height: 20px;
   text-align: left;
 }
+
 .icon-temp-now {
-  font-size: 50px;
+  font-size: 55px;
+  position: relative;
 }
 
 .fa-cloud-sun {
@@ -169,6 +171,11 @@ footer {
   border-radius: 30px;
   box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.3);
   font-family: "Hind Siliguri", sans-serif;
+}
+#units {
+  position: relative;
+  font-size: 30px;
+  top: -17px;
 }
 #search-box {
   width: 100%;
