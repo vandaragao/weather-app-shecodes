@@ -28,7 +28,12 @@
         <form id="search-form">
           <div class="row">
             <div class="col-sm-8" id="input-box">
-              <input type="search" id="search-box" placeholder="search..." />
+              <input
+                type="search"
+                id="search-box"
+                placeholder="search..."
+                autocomplete="off"
+              />
             </div>
             <div class="col-sm-4" id="buttons">
               <input type="submit" id="search-button" value="Find" />
@@ -60,7 +65,7 @@
                   <img src="" id="icon" />
                   <span class="temp-now-value"> </span>
                   <span id="units">
-                    <span id="celsius">°C</span> |
+                    <span id="celsius" class="celsius active">°C</span> |
                     <span class="fahrenheit"> °F</span>
                   </span>
                 </section>

@@ -46,14 +46,15 @@ function showTemp(response) {
   minTemp.innerHTML = Math.round(response.data.main.temp_min);
   hum.innerHTML = Math.round(response.data.main.humidity);
   thermalSensation.innerHTML = Math.round(response.data.main.feels_like);
-  console.log(response.data);
+
   currentCity.innerHTML = response.data.name;
   let icon = document.querySelector("#icon");
   icon.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  console.log(response.data.weather[0].icon);
+  celsiusTemperature = response.data.main.temp;
+  console.log(celsiusTemperature);
 }
 
 searchForm.addEventListener("submit", find);
@@ -83,19 +84,28 @@ function showTempHere() {
 }
 
 locationButton.addEventListener("click", showTempHere);
-showTempHere();
+
 let fahrButton = document.querySelector(".fahrenheit");
 let celsiusButton = document.querySelector("#celsius");
-function convert(event) {
+
+function convertToFahr(event) {
   event.preventDefault;
-  currentTemp.innerHTML = Math.round(currentTemp.innerHTML * 1.8 + 32);
+
+  celsiusButton.classList.remove("active");
+  fahrButton.classList.add("active");
+  currentTemp.innerHTML = Math.round(celsiusTemperature * 1.8 + 32);
 }
 
-fahrButton.addEventListener("click", convert);
+let celsiusTemperature = null;
 
-function convertBack(event) {
+fahrButton.addEventListener("click", convertToFahr);
+
+function convertToCelsius(event) {
   event.preventDefault;
-  currentTemp.innerHTML = Math.round((currentTemp.innerHTML - 32) / 1.8);
+  currentTemp.innerHTML = Math.round(celsiusTemperature);
+  celsiusButton.classList.add("active");
+  fahrButton.classList.remove("active");
 }
+celsiusButton.addEventListener("click", convertToCelsius);
 
-celsiusButton.addEventListener("click", convertBack);
+showTempHere();

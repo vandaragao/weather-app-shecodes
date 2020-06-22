@@ -134,9 +134,10 @@ footer {
   background-color: #72beff;
 }
 .fahrenheit,
-#celsius {
-  opacity: 0.7;
+.celsius {
+  opacity: 0.5;
   color: white;
+  cursor: pointer;
 }
 #time {
   background-color: transparent;
@@ -150,7 +151,7 @@ footer {
 }
 .fahrenheit:hover,
 #time:hover,
-#celsius:hover {
+.celsius:hover {
   opacity: 1;
   cursor: pointer;
   transition: all 200ms ease-in-out;
@@ -179,4 +180,10 @@ footer {
 }
 #search-box {
   width: 100%;
+}
+
+.active {
+  text-decoration: none;
+  opacity: 1;
+  cursor: auto;
 }
