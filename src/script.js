@@ -63,24 +63,10 @@ let locationButton = document.querySelector("#location");
 function showTempHere() {
   function getLocation(position) {
     let apiUrlcoords = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=427d00adec8a31c1032d4fd37c4a7f55&units=metric`;
-    axios.get(apiUrlcoords).then(showTempLoc);
+    axios.get(apiUrlcoords).then(showTemp);
     currentCity.innerHTML = `${position.coords.latitude}`;
   }
   navigator.geolocation.getCurrentPosition(getLocation);
-
-  function showTempLoc(response) {
-    currentTemp.innerHTML = Math.round(response.data.main.temp);
-    currentCity.innerHTML = response.data.name;
-    windSpeed.innerHTML = Math.round(response.data.wind.speed);
-    maxTemp.innerHTML = Math.round(response.data.main.temp_max);
-    minTemp.innerHTML = Math.round(response.data.main.temp_min);
-    hum.innerHTML = Math.round(response.data.main.humidity);
-    thermalSensation.innerHTML = Math.round(response.data.main.feels_like);
-    icon.setAttribute(
-      "src",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-  }
 }
 
 locationButton.addEventListener("click", showTempHere);
@@ -107,5 +93,4 @@ function convertToCelsius(event) {
   fahrButton.classList.remove("active");
 }
 celsiusButton.addEventListener("click", convertToCelsius);
-
 showTempHere();
