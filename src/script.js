@@ -13,8 +13,9 @@ let weekDays = [
   "Saturday",
 ];
 let currentWeekDay = weekDays[weekDay];
-let currentHour = now.getHours();
+let currentHour = ("0" + now.getHours()).slice(-2);
 let currentMinutes = ("0" + now.getMinutes()).slice(-2);
+
 currentTime.innerHTML = `${currentWeekDay}, ${currentHour}:${currentMinutes}`;
 
 let searchInput = document.querySelector("#search-box");
@@ -35,9 +36,6 @@ function find(event) {
 
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityResult}&appid=427d00adec8a31c1032d4fd37c4a7f55&units=metric`;
 
-  currentCity.innerHTML = `${
-    cityResult.charAt(0).toUpperCase() + cityResult.slice(1)
-  }`;
   axios.get(apiUrl).then(showTemp);
 }
 
@@ -49,6 +47,7 @@ function showTemp(response) {
   hum.innerHTML = Math.round(response.data.main.humidity);
   thermalSensation.innerHTML = Math.round(response.data.main.feels_like);
   console.log(response.data);
+  currentCity.innerHTML = response.data.name;
 }
 
 searchForm.addEventListener("submit", find);
