@@ -37,9 +37,7 @@
             </div>
             <div class="col-sm-4" id="buttons">
               <input type="submit" id="search-button" value="Find" />
-              <button class="favorite">
-                <i class="fas fa-star"></i>
-              </button>
+
               <button id="location">
                 <i class="fas fa-map-marker-alt"></i>
               </button>
@@ -50,17 +48,12 @@
         <div class="card">
           <div class="card-body" id="temperature-now">
             <div class="row">
-              <div class="col-sm-7" id="col-city">
+              <div class="col-l-8" id="col-city">
                 <h1 id="current-city"></h1>
                 <p id="current-time">
                   Tuesday 16:00
                 </p>
-                <span id="select-time">
-                  <label id="time">
-                    Select time
-                  </label>
-                  <input type="time" id="time" name="later" />
-                </span>
+
                 <section class="icon-temp-now">
                   <img src="" id="icon" />
                   <span class="temp-now-value"> </span>
@@ -71,13 +64,11 @@
                 </section>
               </div>
 
-              <div class="col-sm-5" id="col-details">
+              <div class="col-l-4" id="col-details">
                 <ul>
                   <li>Max Temperature: <strong id="max"> </strong>°C</li>
                   <li>Min Temperature: <strong id="min"> </strong>°C</li>
-                  <li>
-                    Thermal Sensation: <strong id="sensation"> </strong>°C
-                  </li>
+                  <li>Real Feal: <strong id="sensation"> </strong>°C</li>
                   <li>Humidity: <strong id="humidity"> </strong>%</li>
                   <li>Wind: <strong id="wind"> </strong> km/h</li>
                 </ul>
@@ -85,97 +76,9 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="card-group" id="week">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="day-plus-one">
-                    Thu
-                  </h4>
-                  16°/25°
-                  <br />
-                  <i class="fas fa-cloud-sun"></i>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="day-plus-two">
-                    Fri
-                  </h4>
-                  16°/25°
-                  <br />
-                  <i class="fas fa-cloud-sun"></i>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="day-plus-three">
-                    Sat
-                  </h4>
-                  16°/25°
-                  <br />
-                  <i class="fas fa-cloud-sun"></i>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="day-plus-four">
-                    Sun
-                  </h4>
-                  16°/25°
-                  <br />
-                  <i class="fas fa-cloud-sun"></i>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="day-plus-five">
-                    Mon
-                  </h4>
-                  16°/25°
-                  <br />
-                  <i class="fas fa-cloud-sun"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <hr />
-        <div class="card-group" id="other-cities">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="day-plus-four">
-                London
-              </h4>
-              16°/25°
-              <br />
-              <i class="fas fa-cloud-sun"></i>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <h4 class="day-plus-four">
-                New York
-              </h4>
-              16°/25°
-              <br />
-              <i class="fas fa-cloud-sun"></i>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-body">
-              <h4 class="day-plus-four">
-                Hong Kong
-              </h4>
-              16°/25°
-              <br />
-              <i class="fas fa-cloud-sun"></i>
-            </div>
-          </div>
-        </div>
       </div>
-      <br />
+
       <footer>
         <a
           href="https://github.com/vandaragao/weather-app-shecodes"

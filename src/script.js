@@ -37,6 +37,10 @@ function find(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityResult}&appid=427d00adec8a31c1032d4fd37c4a7f55&units=metric`;
 
   axios.get(apiUrl).then(showTemp);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityResult}&appid=427d00adec8a31c1032d4fd37c4a7f55&units=metric`;
+
+  axios.get(apiUrl).then(showForecast);
 }
 
 function showTemp(response) {
@@ -63,7 +67,9 @@ let locationButton = document.querySelector("#location");
 function showTempHere() {
   function getLocation(position) {
     let apiUrlcoords = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=427d00adec8a31c1032d4fd37c4a7f55&units=metric`;
+
     axios.get(apiUrlcoords).then(showTemp);
+
     currentCity.innerHTML = `${position.coords.latitude}`;
   }
   navigator.geolocation.getCurrentPosition(getLocation);
